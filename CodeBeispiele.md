@@ -20,15 +20,18 @@ while((shortOption = getopt(argc, argv, "qc:") != EOF))
             break;
         case 'c':
             // read given directory
-            directory = optarg;
+            config = optarg;
             break;
     }
 }
+
+directory = argv[optind];
+
 ```
 
 2. Wie ermitteln Sie den verzeichnisname in diesem Beispiel? 
 
-- Parameter zu den jeweiligen shortoptions werden in der globalen Variable optarg gespeichert. siehe 1.
+- nach dem getopt() Aufruf beschreibt die globale Variable optind den Index des nächsten Parameters, der keine shortoption ist. 
 
 ---
 
