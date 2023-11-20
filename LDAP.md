@@ -103,3 +103,7 @@ Gesetzte Attribute: a, b, d, f, e
 **False**
 
 ---
+
+### Example LDAP command
+
+ldapsearch -x -LLL -H ldap://ldap.technikum-wien.at:389 -D "uid=if22b231,ou=people,dc=technikum-wien,dc=at" -W -b "ou=people,dc=technikum-wien,dc=at" "(&(|(sn=A*)(sn=B*))(|(ou=BIF)(ou=BID)))"
